@@ -1,7 +1,7 @@
 import { of, Observable } from "rxjs";
 import { fromFetch } from "rxjs/fetch";
 import { switchMap, catchError, map, tap, switchMapTo } from "rxjs/operators";
-import { Cart, ExchangableValue, Rate, TotalPrice, Prices } from "./model";
+import { Cart, ExchangableValue, Rate, TotalPrice, Currency } from "./model";
 
 const selectedCart: Cart[] = [
   { price: 20 },
@@ -34,7 +34,7 @@ const getSum = (prices: number[]): number =>
   
 const convertValues = (rates: Rate, multValue: number = 1): TotalPrice =>
   (Object as any)
-    .entries(Prices)
+    .entries(Currency)
     .reduce(
       (acc, [key, value]) => ({ ...acc, [key]: rates[value] * multValue }),
       {}

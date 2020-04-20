@@ -20,7 +20,7 @@ export interface Cart {
   price: number;
 }
 
-export enum Prices {
+export enum Currency {
   rubles = 'RUB',
   euros = 'EUR',
   usdollars = 'USD',
