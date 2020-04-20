@@ -9,10 +9,12 @@ const selectedCart: Cart[] = [
   { price: 67 },
   { price: 1305 },
 ];
+
 const BASE_CURRENCY = "USD";
+const BASE_URL = "https://api.exchangeratesapi.io";
 
 const getData$: Observable<ExchangableValue> = fromFetch(
-  `https://api.exchangeratesapi.io/latest?base=${BASE_CURRENCY}`
+  `${BASE_URL}/latest?base=${BASE_CURRENCY}`
 ).pipe(
   switchMap((response) => {
     if (response.ok) {

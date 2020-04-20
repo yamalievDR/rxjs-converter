@@ -13,7 +13,7 @@ export interface ExchangableValue {
 }
 
 export interface Rate {
-  [curency: string]: string
+  [curency: string]: number
 }
 
 export interface Cart {
